@@ -1,0 +1,378 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+
+
+#nav{
+    height: 384px;
+    background-color: #f1f1f1;
+    padding-top: 16px;
+    box-shadow:7px 7px 17px 3px rgba(42,41,41,0.06);
+    width: 100%;
+}
+
+#nav_top{
+    width: 100%;
+    height: 68px;
+}
+
+#navRight{
+    width: 235px;
+    display: inline-block;
+    float: right;
+    overflow: hidden;
+    padding-right: 40px;
+    height: 68px;
+    line-height: 68px;
+}
+#navRight #userPhoto{
+    float: left;
+    height: 35px;
+    width: 35px;
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+.navs{
+    color: #202020FF;
+    font-size: 16px;
+    line-height: 17px;
+    margin-left:27px ;
+    display: inline-block;
+    cursor: pointer;
+}
+.navs a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #202020FF;
+    font-size: 16px;
+    line-height: 17px;
+    margin-left:27px ;
+    display: inline-block;
+}
+#navSearch{
+    width:100%;
+    margin: 0 auto;
+    text-align: center;
+    height: 315px;
+    position: relative;
+}
+
+#boxLeft{
+    width: 50%;
+    height: 315px;
+    background:rgba(68,139,173,1);;
+    float: left;
+}
+
+#boxRight{
+    width: 50%;
+    height: 315px;
+    background:rgba(191,231,252,1);
+    float: left;
+}
+
+#navLogo{
+    position: absolute;
+    top:71px;
+    left: 890px;
+}
+
+#bookInfo{
+    height: 782px;
+    width: 990px;
+    margin: 74px auto 0 auto;
+}
+
+#bookInfo a {
+    font-size:14px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(111,111,111,1);
+    line-height:54px;
+}
+
+#bookInfoTop{
+    height: 360px;
+}
+
+#infoLeft{
+    float: left;
+    width: 760px;
+}
+
+#bookCover{
+    float:left ;
+}
+
+#bookCover img{
+    width: 197px;
+    height: 301px;
+}
+
+#bookIntro{
+    float: left;
+    word-wrap: break-word;
+    text-align: left;
+    margin-left: 14px;
+    font-size:18px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(27,27,27,1);
+    line-height:26px;
+}
+
+#bookIntro h1{
+    margin-bottom: 116px;
+
+}
+
+.intro{
+    font: 12px Arial, Helvetica, sans-serif;
+    color: #666666;
+    font-weight: 800;
+}
+
+.interest{
+    width:66px;
+    height:41px;
+    background:rgba(68,139,173,1);
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:26px;
+    border: none;
+    margin-right: 8px;
+}
+
+#bookInterest{
+    width: 230px;
+    float: right;
+}
+
+#points{
+    margin-top: 60px;
+    width: 200px;
+    height: 50px;
+    float: right;
+}
+
+.people{
+    color: #6e6e6e;
+    font-weight: 500;
+}
+
+.grade{
+    color: #6e6e6e;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.title{
+    height: 9px;
+    width: 990px;
+    background:rgba(204,236,251,1);
+}
+.title h{
+    float: left;
+    margin-top: -14px;
+    font-size:20px;
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    color:rgba(27,27,27,1);
+}
+
+#bookInfoUnder p{
+    width: 972px;
+    height: 274px;
+    margin: 40px auto 30px auto;
+    overflow: auto;
+    word-wrap: break-word;
+    font-size:18px;
+    font-family:Microsoft YaHei;
+    font-weight:300;
+    color:rgba(43,43,43,1);
+    line-height:34px;
+}
+
+.select{
+    margin-left: 11px;
+    width: 40px;
+    height: 20px;
+    border: 1px solid rgba(48, 43, 43, 0.3);
+    text-align: center;
+    text-align-last: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("../src/arrow.png") no-repeat scroll 25px center transparent;
+    background-size: 30%;
+    cursor: pointer;
+    padding-left: 5px;
+    font-size:10px ;
+
+}
+select::-ms-expand {
+    display: none;
+}
+#commentsBox{
+    height: 132px;
+    width: 989px;
+    margin-top: 48px;
+    padding-top: 11px;
+    box-sizing: border-box;
+    background:rgba(229,247,255,1);
+    border:2px solid rgba(204,236,251,1)
+}
+
+
+#comments{
+    height: 890px;
+    width: 990px;
+    margin: 0 auto;
+}
+
+#btnBox{
+    height: 32px;
+
+}
+#btnBox span{
+    display: inline-block;
+    float: left;
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    font-weight:300;
+    color:rgba(140,140,140,1);
+    line-height:20px;
+    margin-left: 9px;
+}
+
+
+#btnBox select{
+    float: left;
+}
+
+#btnBox input{
+    width: 92px;
+    height: 24px;
+    float: right;
+    background:rgba(68,139,173,1);
+    border: none;
+    font-size:12px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:24px;
+    border-radius: 5px;
+    margin-right: 9px;
+}
+
+textarea{
+    width:972px;
+    height:65px;
+    background:rgba(255,255,255,1);
+    border:4px solid rgba(255,255,255,1);
+    resize: none;
+    font-size: 14px;
+    border: none;
+    margin-left: 6px;
+}
+textarea::-webkit-input-placeholder {
+    color: #D6D0CA !important; /* WebKit browsers /
+}
+input:-moz-placeholder {
+color: #D6D0CA !important; / Mozilla Firefox 4 to 18 /
+}
+input::-moz-placeholder {
+color: #D6D0CA !important; / Mozilla Firefox 19+ /
+}
+input:-ms-input-placeholder {
+color: #D6D0CA !important; / Internet Explorer 10+ */
+}
+
+#userComments{
+    height: 606px;
+    margin-top: 84px;
+}
+
+#userComments ul{
+    height: 606px;
+}
+
+
+#userComments ul li{
+    margin-bottom: 80px;
+    height: 71px;
+}
+
+#userComments ul li img{
+    float: left;
+    height: 64px;
+    width: 64px;
+    margin-top: 2px;
+}
+
+.remarks{
+    float: right;
+    width: 914px;
+    height: 100%;
+    box-sizing: border-box;
+    padding:8px 5px ;
+}
+
+
+.remarks h{
+    width:54px;
+    height:17px;
+    font-size:22px;
+    font-family:Microsoft YaHei;
+    font-weight:300;
+    color:rgba(45,163,219,1);
+    line-height:23px;
+}
+
+.score{
+    width:24px;
+    height:12px;
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    font-weight:bold;
+    color:rgba(10,130,186,1);
+    line-height:23px;
+}
+
+.time{
+    width:99px;
+    height:14px;
+    font-size:14px;
+    font-family:Microsoft YaHei;
+    font-weight:300;
+    color:rgba(181,181,181,1);
+    line-height:23px;
+    float: right;
+}
+
+.remarks p{
+    font-size:16px;
+    font-family:Microsoft YaHei;
+    font-weight:300;
+    color:rgba(27,27,27,1);
+    line-height:23px;
+}
+
+nav{
+    width: 212px;
+    height: 84px;
+    margin: 0px auto;
+}
+
+.pagination{
+    margin: 20px auto ;
+    height: 34px;
+    width: 212px;
+}
+

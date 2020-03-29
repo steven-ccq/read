@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+input,textarea{
+    outline: none;
+}
+button{
+    cursor: pointer;
+}
+
+#header{
+    height: 205px;
+    background-color: #f1f1f1;
+    padding-top: 16px;
+    box-shadow:7px 7px 17px 3px rgba(42,41,41,0.06);
+    width: 100%;
+}
+#navLeft{
+    margin-left: 31px;
+    width: 380px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#navLeft li{
+    list-style: none;
+    color: #202020FF;
+    font-size: 16px;
+    line-height: 17px;
+    float: left;
+    margin-right: 35px;
+}
+
+#navRight{
+    width: 235px;
+    display: inline-block;
+    float: right;
+    overflow: hidden;
+
+}
+#navRight #userPhoto{
+    float: left;
+    height: 35px;
+    width: 35px;
+}
+
+.navs{
+    color: #202020FF;
+    font-size: 16px;
+    line-height: 17px;
+    margin-left:27px ;
+    display: inline-block;
+    cursor: pointer;
+}
+.navs a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #202020FF;
+    font-size: 16px;
+    line-height: 17px;
+    margin-left:27px ;
+    display: inline-block;
+}
+#navSearch{
+    width: 470px;
+    margin: 0 auto;
+    text-align: center;
+    height: 155px;
+}
+#nav_bor{
+    position: relative;
+    width: 411px;
+}
+#nav_bor input{
+    margin-top: 6px;
+    width: 411px;
+    height:34px;
+    background:rgba(255,255,255,1);
+    border:1px solid rgba(181,181,181,1);
+    opacity:0.8;
+    border-radius:17px;
+}
+
+#icon_search{
+    position: absolute; right: 8px ;z-index: 5;
+    top:12px;
+    background-image: url("../src/search.png");
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    width: 20px;
+    height: 20px;
+}
+.smallSerch{
+    width: 20px;height: 20px;
+    margin-right: 5px;
+}
+.right{
+    display: flex;
+    justify-content: flex-start;
+}
+.headphoto{
+    width: 35px;height: 35px;
+    border-radius: 50%;
+    margin-top: 4px;
+    background-color: aliceblue;
+}
+.name{
+    margin-top: 15px;margin-left: 16px;
+}
+.personal{
+    margin:15px 134px 0px 15px;
+}
+.center{
+    background-color: #E0E0E0FF;
+    width: 100%;
+}
+.contain{
+    width: 1000px;
+    margin: auto;
+}
+.home{
+    padding-top: 60px;
+    margin-bottom: 14px;
+}
+.book{
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.everybook{
+    width: 490px;
+    height:179px;
+    background:rgba(241,241,241,1);
+    box-shadow:7px 7px 17px 3px rgba(42,41,41,0.06);
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: 20px;
+}
+.cover{
+    width: 100px;height: 140px;
+    background-color: aliceblue;
+    margin-top: 19px;margin-left: 23px;
+    margin-right: 26px;
+}
+
+.cover img{
+    width: 100px;
+    height:140px;
+}
+
+.title{
+    margin-top: 19px;margin-bottom: 23px;
+    color: #3FB0E4FF;
+    font-size: 20px;
+}
+.writer{
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+.publish{
+    margin-left: 14px;
+    font-size: 12px;
+    color: #787878FF;
+}
+.brif{
+    width: 267px;
+    font-size: 14px;
+}
+.score{
+    font-size: 16px;
+    position: absolute;
+    right: 33px;
+    top: 37px;
+}
+.num{
+    color: #56C2F4FF;
+    font-size: 30px;
+    margin-left: 6px;
+    right: 33px;
+
+}
+/* .page{
+    width: 417px;
+    margin-top: 30px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.circle{
+    width: 18px;
+    height:18px;
+    border:2px solid rgba(118,118,118,1);
+    border-radius:50%;
+
+}
+.pagenum{
+    width: 24px;height: 24px;
+    border:2px solid rgba(104,104,104,1);
+    transform: rotate(45deg);
+    text-align: center;
+    font-size: 24px;
+}
+.number{
+    transform: rotate(-45deg);
+} */
+.footer{
+    width:1366px;height: 198px;
+    border-top: 2px solid rgba(104,104,104,1);
+    margin: auto;margin-top: 30px;
+    display: flex;
+    justify-content: flex-start;
+}
+.yellowLogo{
+    width: 233px;height: 73px;
+    margin-top: 62px;
+    margin-left: 183px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+.logoWord{
+    font-size: 30px;
+    color: #FFAB00FF;
+    line-height: 73px;
+    margin-left: 46px;
+}
+.line{
+    margin-top: 58px;width:1px;
+    height:72px;
+    background:rgba(149,149,149,1);
+
+}
+.buleLogo{
+    width: 130px;height: 71px;
+    margin-left: 24px;margin-top: 62px;
+}
+
+nav{
+    width: 590px;
+    height: 50px;
+    margin: 80px auto 40px auto;
+}
+
+
+.pagination li{
+    float: left;
+}
+
+.page{
+    float: left;
+    margin-right: 40px;
+    position: relative;
+}
+
+.page span{
+    position: absolute;
+    top:30%;
+    left: 42%;
+    color: #6a6a6a;
+}
+
+#pages{
+    float: left;
+    width: 540px;
+    height: 50px;
+    margin-left: 50px;
+}
+
+

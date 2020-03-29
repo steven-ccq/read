@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/CSS/detail.css">
+    <script src="/static/js/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+<!--    导航栏-->
+    <div  id="nav">
+        <div id="nav_top">
+            <div id="navRight">
+                {% if is_online == 1 %}
+                <div id="userPhoto">
+                    <img src="/static/{{ user.image }}">
+                </div>
+                <span id="userName" class="navs">
+                       {{ user.name }}
+                    </span>
+                <span class="navs">
+                         <a id="personCenter" href="">个人中心</a>
+                    </span>
+                {% endif %}
+            </div>
+        </div>
+        <div id="navSearch">
+           <div id="boxLeft"></div>
+            <div id="boxRight"></div>
+            <div id="navLogo"><img src="/static/src/logo_top.png" alt=""></div>
+        </div>
+    </div>
+
+<!--    书籍信息-->
+    <div id="bookInfo">
+<!--            这里有个超链接返回首页-->
+            <a href="">返回首页</a>
+            <div id="bookInfoTop">
+                <div id="infoLeft">
+                    <div id="bookCover">
+<!--                        书的封面-->
+                        <img src="/static/{{ book.cover }}">
+                    </div>
+                    <div id="bookIntro">
+<!--                        书的标题-->
+                        <h1>{{ book.title }}</h1>
+                        <span class="intro">作者：</span>{{ book.writer }}<br>
+                        <span class="intro">出版社：</span>{{ book.publish_house }}<br>
+                        <span class="intro">出版日期：</span>{{ book.publish_date }}<br>
+                        <span class="intro">页数：</span>{{ book.page }}<br>
+                        <span class="intro">价格：</span>{{ book.price }}<br>
+                        <span class="intro">评分：</span>{{ book.star }}<br>
+                        <span class="intro">评分人数：</span>{{ book.people }}<br>
+                    </div>
+                </div>
+<!--                兴趣选择按钮区域-->
+                <div id="bookInterest">
+                     <form action="" method="post" >
+                         {% csrf_token %}
+                         <input type="submit" value="想读" name="interest" class="interest">
+                         <input type="submit" value="在读" name="interest" class="interest">
+                         <input type="submit" value="读过" name="interest" class="interest">
+                     </form>
+                </div>
+            </div>
+            <div id="bookInfoUnder">
+                <div class="title"><h>内容介绍。。。。。。。</h></div>
+                <p>
+<!--                    书的介绍-->
+                    {{ book.summary }}
+                </p>
+            </div>
+        </div>
+
+<!--    评论信息-->
+    <div id="comments">
+        <div class="title"><h>短评。。。。。。。</h></div>
+        <div id="commentsBox">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div id="btnBox">
+                    <span>来评分吧</span>
+                    <select  class="select" name="score">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <input name="comment" type="submit" value="发布评论">
+                </div>
+                <textarea placeholder="请遵守互联网相关法律法规" maxlength="200"  name="content"></textarea>
+            </form>
+            <div id="userComments">
+                <ul>
+                    {% for comment in comment %}
+                    <li>
+<!--                        应该是一页4份评论，也就是4个 li 标签-->
+
+
+                         <div class="remarks">
+                         <img src="/static/{{ comment.image }}">
+                             <span>
+                            <h>
+<!--                                发布评论的人-->
+                                {{ comment.name }}
+                            </h>
+                            <span class="score">
+<!--                                评论时的分数-->
+                                {{ comment.grade }}
+                            </span>
+                        </span>
+                             <span class="time">
+<!--                                 发布评论的时间-->
+                                 {{ comment.time }}
+                             </span>
+                             <p>
+<!--                                 评论的内容-->
+                                 {{ comment.comment }}
+                             </p>
+                         </div>
+
+                    </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <li>
+            {% if goods.has_previous %}
+            <a href="/experiments/detail/{{ book_id }}/{{ comment.previous_page_number }}/" aria-label="上一页">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+            {% else %}
+            <a class="disabled" href="#" aria-label="上一页">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+            {% endif %}
+        </li>
+        {% for page in paginator.page_range %}
+        <li><a href="/experiments/detail/{{ book_id }}/{{ page }}">{{ page }}</a></li>
+
+        {% endfor %}
+        <li>
+            {% if goods.has_next %}
+            <a href="/experiments/detail/{{ book_id }}/{{ comment.next_page_number }}/" aria-label="下一页">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+            {% else %}
+            <a class="disabled" href="#" aria-label="下一页">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+            {% endif %}
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
+

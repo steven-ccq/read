@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新书速递详情页</title>
+    <link rel="stylesheet" href="/static/CSS/books.css">
+    <script src="/static/js/jquery-1.12.4.js"></script>
+    <script>
+            $(function () {
+                let $page=$(".page");
+                var $now=-1;
+                $page.click(function () {
+                    $(this).find("img").attr("src","/static/src/In.png");
+                    $(this).find("span").css("color","white")
+                    $(this).siblings().find("img").attr("src","/static/src/Un.png");
+                    $(this).siblings().find("span").css("color","#6a6a6a");
+                })
+
+            })
+    </script>
+</head>
+<body>
+    <div  id="header">
+    <ul id="navLeft">
+        <li><a>新书速递</a></li>
+    </ul>
+    <div id="navRight">
+        {% if is_online == 1 %}
+        <div id="userPhoto">
+            <img>
+        </div>
+        <span id="userName" class="navs">
+               {{ user.name }}
+            </span>
+        <span class="navs">
+                 <a id="personCenter" href="{% url 'reading:center' %}">个人中心</a>
+            </span>
+        {% endif %}
+        {% if is_online == 0 %}
+        <span class="navs" id="LOGIN">
+                登陆
+            </span>
+        {% endif %}
+
+    </div>
+    <div id="navSearch">
+        <div id="navLogo"><img src="/static/src/logo_top.png" alt=""></div>
+
+    </div>
+</div>
+    <div class="center">
+        <div class="contain">
+            <p class="home">主页/新书速递</p>
+            <div class="book">
+<!--                循环8本书-->
+<!--                {% for i in newest_books %}-->
+                <div class="everybook">
+                    <div class="cover">
+                        <a href="/experiments/detail/{{ i.id }}/1/"><img src="/static/{{ i.cover }}"></a>
+                    </div>
+                    <div class="detail">
+                        <a href="/experiments/detail/{{ i.id }}/1/"><p class="title">
+                            {{ i.title }}
+                        </p></a>
+                        <p class="writer">{{ i.writer }}
+                            <span class="publish">{{ i.publish_house }}/{{ i.publish_date }}</span></p>
+                        <p class="brif">
+                            {{ i.summary }}
+                        </p>
+                        <div class="score">评分<span class="num">{{ i.star }}</span></div>
+                    </div>
+                </div>
+<!--                {% endfor %}-->
+<!--                <div class="everybook">-->
+<!--                    <div class="cover"></div>-->
+<!--                    <div class="detail">-->
+<!--                        <p class="title">标题</p>-->
+<!--                        <p class="writer">[籍]作者-->
+<!--                            <span class="publish">出版社/2020.3.1</span></p>-->
+<!--                        <p class="brif">-->
+<!--&lt;!&ndash;                            在每天的沟通中，我们都在对周围人的好与&ndash;&gt;-->
+<!--&lt;!&ndash;坏做出评价。但我们的赞扬与责备客观真实&ndash;&gt;-->
+<!--&lt;!&ndash;吗？我们要如何提升这项能力呢？&ndash;&gt;-->
+<!--                        </p>-->
+<!--                        <div class="score">评分<span class="num">7.2</span></div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+
+            </div>
+            <!-- <div class="page">
+                <div class="circle"></div>
+                <div class="pagenum"><span class="number">1</span></div>
+            </div> -->
+        </div>
+        <nav aria-label="Page navigation">
+                <ul class="pagination">
+<!--                    循环六页-->
+                    <ul id="pages">
+                                    {% for page in paginator.page_range %}
+
+                        <a href="/experiments/center/{{ page }}"><li class="page">
+                            <img src="/static/src/Un.png">
+                            <span>
+                                {{ page }}
+                            </span>
+                       </li> </a>
+<!--                        <li class="page"><a href="#">-->
+<!--                            <img src="/static/src/Un.png"><span>1</span>-->
+<!--                        </a></li>-->
+{% endfor %}
+                    </ul>
+
+
+                    </li>
+                </ul>
+            </nav>
+
+        <div class="footer">
+            <div class="yellowLogo">
+                <img src="/static/src/ITStudiologo.png" alt="">
+            </div>
+            <div class="line"></div>
+            <img src="/static/src/logo_under.png" alt="" class="buleLogo">
+        </div>
+    </div>
+
+    
+</body>
+</html>
