@@ -7,8 +7,8 @@ from experiments.models import Book, Comment, Mark, User
 def allbookpage(request, page):
     user = request.session.get('user')
     judge = User.objects.filter(name=user)
-    if user is not None and judge.is_online == 1:
-        judge.is_online = 0
+    if user is not None and judge.is_online == 0:
+        judge.is_online = 1
         judge.save()
         request.session['user'] = None
         return redirect('/main')
@@ -29,8 +29,8 @@ def allbookpage(request, page):
 def detail(request, id, page):
     user = request.session.get('user')
     judge = User.objects.filter(name=user)[0]
-    if user is not None and judge.is_online == 1:
-        judge.is_online = 0
+    if user is not None and judge.is_online == 0:
+        judge.is_online = 1
         judge.save()
         request.session['user'] = None
         return redirect('/main')
