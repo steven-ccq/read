@@ -8,12 +8,10 @@ def allbookpage(request, page):
     user = request.session.get('user')
     judge = User.objects.filter(name=user)
     if user is not None and judge.is_online == 0:
-        judge.is_online = 1
-        judge.save()
         request.session['user'] = None
         return redirect('/main')
     newest_books = Book.objects.all().order_by('publish_date')
-    paginator = Paginator(newest_books, per_page=4)
+    paginator = Paginator(newest_books, per_page=8)
     try:
         newest_books = paginator.page(page)
     except PageNotAnInteger:
@@ -30,8 +28,6 @@ def detail(request, id, page):
     user = request.session.get('user')
     judge = User.objects.filter(name=user)[0]
     if user is not None and judge.is_online == 0:
-        judge.is_online = 1
-        judge.save()
         request.session['user'] = None
         return redirect('/main')
     #user = 'sxy'
@@ -87,7 +83,7 @@ def detail(request, id, page):
                 return render(request, 'detail.html', context)
             review = Comment.objects.create(name=user, comment=content, book_id=id, grade=score)
             review.save()
-            book.star = round((book.star+score)/2, 2)
+            book.star = round((book.star*book.people+score)/(book.people+1), 2)
             book.people += 1
             book.save()
     comment = Comment.objects.filter(book_id=id).order_by('time')
